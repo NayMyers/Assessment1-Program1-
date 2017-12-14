@@ -27,18 +27,18 @@ void SalesData::loadDataFromFile(string filename)
 	int placeholder = 0; //Creates a variable to load the integers into from the text file before they are placed into the vector to create a logical condition for the while loop
 	while (inputfile >> placeholder)//When there is no more data to be retrieved from the input file stop the loop
 	{
-		salesrecords.push_back(placeholder); //Put the data from the placeholder into the back of the vector using the method push_back to be able to 
+		salesrecords.push_back(placeholder); //Put the data from the placeholder into the back of the vector using the method push_back to be able to use the data later to calculate number of asterix's
 	}
 }
 void SalesData::saveBarChartToFile(string filename)
 {
-	outputfile.open(filename);
+	outputfile.open(filename);//****************)OOOOOOOOOOOOOO
 	int asterixnumber = 0;
 	outputfile << "SALES BAR CHART" << endl << "(each * equals £100)" << endl;
 	
 	for (int x = 0; x<int(salesrecords.size()); x++)
 	{
-		asterixnumber = salesrecords[x] / 100;
+		asterixnumber = salesrecords[x] / 100; //calculate asterix number
 		outputfile << "Store:" << x<<" ";
 		for (int y = 0; y < asterixnumber; y++)
 		{
@@ -46,7 +46,7 @@ void SalesData::saveBarChartToFile(string filename)
 		}
 		outputfile << endl;
 	}
-	outputfile.close();
+	outputfile.close(); //******CCCCCCCCCCCC
 
 }
 int main(void)
